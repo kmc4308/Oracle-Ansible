@@ -1,8 +1,8 @@
 oracle_install_group:            "oinstall"
 mount_directory:                 "/"
-root_directory:                  "/u01"
-stage_dir:                       "/u01/stage"
-scripts_directory:               "{{ root_directory }}/app/scripts"
+root_directory:                  "/oracle"
+stage_dir:                       "/oracle/stage"
+scripts_directory:               "{{ root_directory }}/oracle/scripts"
 oracle_base:                     /oracle
 oracle_home:                     /oracle/product/19.0.0/dbhome_1
 oracle_inventory:                /oracle/oraInventory 
