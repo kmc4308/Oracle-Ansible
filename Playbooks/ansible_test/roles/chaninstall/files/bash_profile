@@ -1,0 +1,26 @@
+# .bash_profile
+
+# Get the aliases and functions
+if [ -f ~/.bashrc ]; then
+        . ~/.bashrc
+fi
+
+# User specific environment and startup programs
+
+set -o vi
+stty erase ^H
+
+######## Profile ENV Config ###############
+export PS1=`uname -n`'@$LOGNAME:$PWD # '
+
+umask 022
+export EDITOR=vi
+
+ORACLE_BASE=/oracle;export ORACLE_BASE
+ORACLE_HOME=/oracle/product/19.0.0/dbhome_1; export ORACLE_HOME
+ORACLE_SID=SILENTDB; export ORACLE_SID
+ORACLE_TERM=xterm; export ORACLE_TERM
+PATH=/usr/sbin:$ORACLE_HOME/bin:$JAVA_HOME/bin:$PATH:$HOME/bin:/opt/perf/bin; export PATH
+LANG=C; export LANG
+export NLS_LANG=American_america.KO16MSWIN949
+export LD_LIBRARY_PATH=$ORACLE_HOME/lib:$ORACLE_HOME/network/lib:/usr/lib:/usr/lib64
