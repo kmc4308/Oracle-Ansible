@@ -1,5 +1,0 @@
----
-- name: Chan Oracle Playbook
-  hosts: all
-  roles:
-    - role: chaninstall
