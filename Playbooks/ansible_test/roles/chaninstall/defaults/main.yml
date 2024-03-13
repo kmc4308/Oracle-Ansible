@@ -1,2 +1,97 @@
 ---
-# defaults file for chaninstall
+tasks file for chaninstall
+- name: Example from an Ansible Playbook
+  ansible.builtin.ping:
+
+# - name: Install the latest version of Apache
+#   ansible.builtin.yum:
+#     name: 
+#       - unzip
+#       - libnsl
+#       - prel
+#     state: latest
+
+# - name: Add the user 'oracle' with a specific uid and a primary group of 'dba'
+#   ansible.builtin.user:
+#     name: oracle
+#     group: dba
+
+# - name: Create a directory if it does not exist
+#   ansible.builtin.file:
+#     path: /oracle/product/19.0.0/dbhome_1
+#     owner: oracle
+#     group: dba
+#     state: directory
+#     mode: '0755'
+
+# - name: cp sysctl.conf
+#   ansible.builtin.copy:
+#     src:  sysctl.conf
+#     dest: /etc/
+
+# - name: sysctl -p 실행
+#   ansible.builtin.shell: sysctl -p
+
+# - name: cp bash_profile
+#   ansible.builtin.copy:
+#     src:  bash_profile
+#     dest: /home/oracle/.bash_profile
+#     owner: oracle
+#     group: dba
+
+# - name: source ~/.bash_profile 실행
+#   ansible.builtin.shell: source /home/oracle/.bash_profile
+
+# - name: cp bash_profile
+#   ansible.builtin.copy:
+#     src:  bash_profile
+#     dest: /root/.bash_profile
+
+# - name: source ~/.bash_profile 실행
+#   ansible.builtin.shell: source /root/.bash_profile
+
+# - name: Create a symbolic link
+#   ansible.builtin.copy:
+#     src:  LINUX.X64_193000_db_home.zip
+#     dest: /oracle/product/19.0.0/dbhome_1/
+#     owner: oracle
+#     group: dba
+
+# - name: Unarchive a file that is already on the remote machine
+#   ansible.builtin.unarchive:
+#     src:  /oracle/product/19.0.0/dbhome_1/LINUX.X64_193000_db_home.zip
+#     dest: /oracle/product/19.0.0/dbhome_1/
+#     owner: oracle
+#     group: dba
+#     remote_src: yes
+
+# - name: cp db_install.rsp
+#   ansible.builtin.copy:
+#     src:  db_install.rsp
+#     dest: /oracle/product/19.0.0/dbhome_1/install/response
+
+
+# - name: silent 실행 및 root 비밀번호 입력
+#   ansible.builtin.shell: |
+#     export CV_ASSUME_DISTID=RHEL7.6
+#     /oracle/product/19.0.0/dbhome_1/runInstaller -silent -responseFile /oracle/product/19.0.0/dbhome_1/install/response/db_install.rsp
+#   args:
+#     stdin: "dhfkzmf00!\r"
+
+
+# - name: listener 설정 (이거 성공)
+#   ansible.builtin.command: /oracle/product/19.0.0/dbhome_1/bin/netca -silent -responseFile /oracle/product/19.0.0/dbhome_1/assistants/netca/netca.rsp
+
+
+# - name: cp dbca.rsp
+#   ansible.builtin.copy:
+#     src:  dbca.rsp
+#     dest: /oracle/product/19.0.0/dbhome_1/assistants/dbca
+
+# - name: dbca 실행
+#   ansible.builtin.command: /oracle/product/19.0.0/dbhome_1/bin/dbca -silent -createDatabase -responsefile /oracle/product/19.0.0/dbhome_1/assistants/dbca/dbca.rsp
+
+# - name: cp sqlnet.ora
+#   ansible.builtin.copy:
+#     src:  sqlnet.ora
+#     dest: /oracle/product/19.0.0/dbhome_1/network/admin
